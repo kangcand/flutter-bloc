@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'screens/article_screen.dart';
+import 'screens/article/article_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/product_screen.dart';
 import 'screens/profile_screen.dart';
@@ -75,9 +75,9 @@ class _BottomMenuState extends State<BottomMenu> {
         height: 60.0,
         items: <Widget>[
           Icon(Icons.home, size: 30),
-          Icon(Icons.list, size: 30),
+          Icon(Icons.article, size: 30),
           // Icon(Icons.album_sharp, size: 30),
-          Icon(Icons.call_split, size: 30),
+          Icon(Icons.shop_rounded, size: 30),
           Icon(Icons.perm_identity, size: 30),
         ],
         color: Colors.blueGrey.shade900,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../blocs/article/bloc/article_bloc.dart';
-import '../models/article_model.dart';
+import '../../blocs/article/bloc/article_bloc.dart';
+import '../../helpers/size_helper.dart';
+import '../../models/article_model.dart';
 
 class ArticleScreen extends StatefulWidget {
   @override
@@ -27,7 +28,13 @@ class _ArticleScreenState extends State<ArticleScreen> {
 
   Widget _buildListArticle() {
     return Container(
-      margin: EdgeInsets.all(8.0),
+      height: double.infinity,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            fit: BoxFit.cover),
+      ),
       child: BlocProvider(
         create: (_) => _newsBloc,
         child: BlocListener<ArticleBloc, ArticleState>(
@@ -66,18 +73,18 @@ class _ArticleScreenState extends State<ArticleScreen> {
       itemBuilder: (context, index) {
         print(model.error);
         return Container(
-          margin: EdgeInsets.all(8.0),
-          child: Card(
-            child: Container(
-              margin: EdgeInsets.all(8.0),
-              child: Column(
-                children: <Widget>[
-                  Text("Title: ${model.data![index].title}"),
-                  Text("Content: ${model.data![index].content}"),
-                ],
-              ),
-            ),
+          alignment: Alignment.bottomLeft,
+          height: displayHeight(context) * 0.25,
+          margin: EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+                image:
+                    NetworkImage("https://picsum.photos/seed/picsum/200/300"),
+                fit: BoxFit.cover),
           ),
+          child: Text("${model.data![index].title}"),
         );
       },
     );
