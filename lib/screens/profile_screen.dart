@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
           primary: false,
           child: Column(
             children: [
-              Text("Home"),
+              Text("Coming soon..."),
             ],
           ),
         ),

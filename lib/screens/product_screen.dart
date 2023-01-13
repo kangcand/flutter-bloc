@@ -23,7 +23,7 @@ class _ProductScreenState extends State<ProductScreen> {
           primary: false,
           child: Column(
             children: [
-              Text("Home"),
+              Text("Coming soon..."),
             ],
           ),
         ),

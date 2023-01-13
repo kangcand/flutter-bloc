@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               Text("Home"),
+              Text("Coming soon..."),
             ],
           ),
         ),

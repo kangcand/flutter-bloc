@@ -55,8 +55,7 @@ class _BottomMenuState extends State<BottomMenu> {
     HomeScreen(),
     ArticleScreen(),
     ProductScreen(),
-    // DetailWisataScreen(),
-
+    // DetailArticleScreen(),
     ProfileScreen(),
   ];
 
