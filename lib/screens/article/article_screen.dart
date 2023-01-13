@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/article/bloc/article_bloc.dart';
 import '../../helpers/size_helper.dart';
 import '../../models/article_model.dart';
+import 'single_screen.dart';
 
 class ArticleScreen extends StatefulWidget {
   @override
@@ -84,7 +85,17 @@ class _ArticleScreenState extends State<ArticleScreen> {
                     NetworkImage("https://picsum.photos/seed/picsum/200/300"),
                 fit: BoxFit.cover),
           ),
-          child: Text("${model.data![index].title}"),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ArticleDetailScreen(),
+                ),
+              );
+            },
+            child: Text("${model.data![index].title}"),
+          ),
         );
       },
     );

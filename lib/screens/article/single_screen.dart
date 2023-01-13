@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/rendering/viewport.dart';
 import 'package:flutter_svg/avd.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:latihan_bloc/models/article_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../helpers/size_helper.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ArticleDetailScreen extends StatefulWidget {
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ArticleDetailScreen> createState() => _ArticleDetailScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,15 +29,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             const SizedBox(
               height: 32,
-            ),
-            const CircleAvatar(
-              backgroundColor: Colors.black,
-              radius: 110,
-              child: CircleAvatar(
-                radius: 110,
-                backgroundImage:
-                    NetworkImage('https://picsum.photos/seed/picsum/200/300'),
-              ),
             ),
             Container(
               width: displayWidth(context) * 0.95,
@@ -63,8 +55,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 16,
+            Container(
+              alignment: Alignment.bottomLeft,
+              height: displayHeight(context) * 0.25,
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://picsum.photos/seed/picsum/200/300"),
+                    fit: BoxFit.cover),
+              ),
             ),
             Expanded(
               child: ListView(
