@@ -18,18 +18,17 @@ class MyApp extends StatelessWidget {
       duration: 5000,
       imageSize: 250,
       imageSrc: "assets/images/logo.png",
-      backgroundColor: Colors.black,
-      // text: "Candra Herdiansyah",
-      // textType: TextType.ColorizeAnimationText,
-      // textStyle: TextStyle(
-      //   fontSize: 40.0,
-      // ),
-      // colors: [
-      //   Colors.purple,
-      //   Colors.blueAccent,
-      //   Colors.black,
-      //   Colors.purple,
-      // ],
+      backgroundColor: Color(0x1f487e),
+      text: "Assalaam Studio",
+      textType: TextType.ColorizeAnimationText,
+      textStyle: TextStyle(
+        fontSize: 40.0,
+      ),
+      colors: [
+        Color.fromARGB(255, 14, 153, 33),
+        Color.fromARGB(255, 189, 172, 19),
+        Color.fromARGB(255, 39, 64, 179),
+      ],
     );
 
     return MaterialApp(
